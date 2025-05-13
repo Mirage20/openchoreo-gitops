@@ -1,0 +1,7 @@
+apiVersion: core.choreo.dev/v1
+kind: Deployment
+metadata:
+  name: reading-list-service-deployment
+  annotations:
+    core.choreo.dev/display-name: Reading List Service Deployment
+    core.choreo.dev/description: Deployment for the Reading List Service

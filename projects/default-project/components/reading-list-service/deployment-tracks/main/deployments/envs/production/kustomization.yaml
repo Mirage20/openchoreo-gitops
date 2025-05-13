@@ -1,0 +1,19 @@
+
+resources:
+  - ../../base
+
+
+nameSuffix: -production
+
+labels:
+  - pairs:
+      core.choreo.dev/environment: production
+      core.choreo.dev/name: reading-list-service-production
+
+patches:
+  - target:
+      group:  core.choreo.dev
+      version: v1
+      kind:   Deployment
+      name:   reading-list-service-deployment
+    path: deployment.yaml

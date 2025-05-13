@@ -1,0 +1,11 @@
+apiVersion: core.choreo.dev/v1
+kind: Deployment
+metadata:
+  name: reading-list-service-development
+spec:
+  deploymentArtifactRef: reading-list-service-build-01
+  configurationOverrides:
+    application:
+      resourceLimits:
+        cpu: 2000m
+        memory: 4Gi

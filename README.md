@@ -1,1 +1,1 @@
-# openchoreo-gitops
+# OpenChoreo GitOps

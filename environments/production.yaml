@@ -1,0 +1,18 @@
+apiVersion: core.choreo.dev/v1
+kind: Environment
+metadata:
+  annotations:
+    core.choreo.dev/description: Production
+    core.choreo.dev/display-name: Production
+  labels:
+    core.choreo.dev/name: production
+  name: production
+spec:
+  dataPlaneRef: default-dataplane
+  gateway:
+    dnsPrefix: prod
+    security:
+      remoteJwks:
+        uri: ""
+  isProduction: true
+

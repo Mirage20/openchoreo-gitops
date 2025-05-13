@@ -1,0 +1,8 @@
+
+resources:
+  - reading-list-service
+
+
+labels:
+  - pairs:
+      core.choreo.dev/project: default-project

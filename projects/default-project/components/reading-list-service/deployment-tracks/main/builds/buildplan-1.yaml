@@ -1,0 +1,16 @@
+apiVersion: core.choreo.dev/v1
+kind: Build
+metadata:
+  name: reading-list-service-build-01
+  annotations:
+    core.choreo.dev/display-name: Build for Reading List Service
+    core.choreo.dev/description: Build triggered for the Reading List Service
+  labels:
+    core.choreo.dev/name: reading-list-service-build-01
+spec:
+  branch: main
+  path: /go-reading-list-rest-api
+  buildConfiguration:
+    buildpack:
+      name: Go
+      version: 1.x

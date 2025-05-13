@@ -1,0 +1,20 @@
+apiVersion: core.choreo.dev/v1
+kind: DataPlane
+metadata:
+  annotations:
+    core.choreo.dev/description: Local development data plane
+    core.choreo.dev/display-name: Default Data Plane
+  labels:
+    core.choreo.dev/name: default-dataplane
+  name: default-dataplane
+spec:
+  gateway:
+    organizationVirtualHost: choreoapis.internal
+    publicVirtualHost: choreoapis.localhost
+  kubernetesCluster:
+    connectionConfigRef: kind-cluster-1-connection-config
+    featureFlags:
+      cilium: true
+      gatewayType: envoy
+      scaleToZero: true
+    name: kind-cluster-1

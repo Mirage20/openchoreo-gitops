@@ -1,0 +1,16 @@
+apiVersion: core.choreo.dev/v1
+kind: Environment
+metadata:
+  annotations:
+    core.choreo.dev/description: Staging
+    core.choreo.dev/display-name: Staging
+  labels:
+    core.choreo.dev/name: staging
+  name: staging
+spec:
+  dataPlaneRef: default-dataplane
+  gateway:
+    dnsPrefix: staging
+    security:
+      remoteJwks:
+        uri: ""

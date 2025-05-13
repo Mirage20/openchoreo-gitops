@@ -1,0 +1,14 @@
+apiVersion: core.choreo.dev/v1
+kind: Component
+metadata:
+  name: reading-list-service
+  annotations:
+    core.choreo.dev/display-name: Reading List Service
+    core.choreo.dev/description: A REST API to manage a reading list of books
+  labels:
+    core.choreo.dev/name: reading-list-service
+spec:
+  type: Service
+  source:
+    gitRepository:
+      url: https://github.com/wso2/choreo-samples

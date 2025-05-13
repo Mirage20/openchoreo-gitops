@@ -1,0 +1,12 @@
+namespace: default-org
+
+resources:
+#  - dataplanes
+#  - deployment-pipelines
+#  - environments
+  - projects
+
+labels:
+  - pairs:
+      core.choreo.dev/organization: default-org
+
