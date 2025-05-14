@@ -1,0 +1,11 @@
+apiVersion: core.choreo.dev/v1
+kind: Deployment
+metadata:
+  name: reading-list-webapp-development
+spec:
+  deploymentArtifactRef: reading-list-webapp-v0-2-0
+  configurationOverrides:
+    application:
+      resourceLimits:
+        cpu: 1000m
+        memory: 2Gi

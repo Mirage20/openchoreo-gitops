@@ -1,0 +1,6 @@
+
+resources:
+  - deployment-track.yaml
+  - image-imports
+  - deployment-profiles
+  - deployments

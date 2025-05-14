@@ -1,0 +1,7 @@
+
+resources:
+  - deployment-profile-1.yaml
+
+labels:
+  - pairs:
+      core.choreo.dev/deployment-track: reading-list-webapp-main

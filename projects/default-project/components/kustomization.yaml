@@ -1,6 +1,7 @@
 
 resources:
   - reading-list-service
+  - reading-list-webapp
 
 
 labels:

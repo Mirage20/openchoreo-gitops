@@ -1,0 +1,12 @@
+apiVersion: core.choreo.dev/v1
+kind: ImageImport
+metadata:
+  name: reading-list-webapp-v0-1-0
+  annotations:
+    core.choreo.dev/display-name: Image import for the Reading List Webapp v0.1.0
+    core.choreo.dev/description: Image import for the Reading List Webapp v0.1.0
+  labels:
+    core.choreo.dev/name: reading-list-webapp-v0-1-0
+spec:
+  tag: v0.1.0
+  deploymentProfileRef: reading-list-webapp-deployment-profile-1

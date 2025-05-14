@@ -1,0 +1,14 @@
+apiVersion: core.choreo.dev/v1
+kind: Component
+metadata:
+  name: reading-list-webapp
+  annotations:
+    core.choreo.dev/display-name: Reading List Web App
+    core.choreo.dev/description: Web application for managing reading lists
+  labels:
+    core.choreo.dev/name: reading-list-webapp
+spec:
+  type: WebApplication
+  source:
+    containerRegistry:
+      imageName: ghcr.io/openchoreo/samples/reading-list-webapp

@@ -1,0 +1,19 @@
+
+resources:
+  - ../../base
+
+
+nameSuffix: -development
+
+labels:
+  - pairs:
+      core.choreo.dev/environment: development
+      core.choreo.dev/name: reading-list-webapp-development
+
+patches:
+  - target:
+      group:  core.choreo.dev
+      version: v1
+      kind:   Deployment
+      name:   reading-list-webapp-deployment
+    path: deployment.yaml

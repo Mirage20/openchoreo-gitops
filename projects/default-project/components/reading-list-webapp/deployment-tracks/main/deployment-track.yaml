@@ -1,0 +1,10 @@
+apiVersion: core.choreo.dev/v1
+kind: DeploymentTrack
+metadata:
+  name: reading-list-webapp-main
+  annotations:
+    core.choreo.dev/display-name: Main deployment track
+    core.choreo.dev/description: The main deployment track for the reading-list-webapp component
+  labels:
+    core.choreo.dev/name: reading-list-webapp-main
+spec: {}

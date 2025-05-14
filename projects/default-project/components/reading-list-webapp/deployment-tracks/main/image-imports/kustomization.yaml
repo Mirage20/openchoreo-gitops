@@ -1,0 +1,9 @@
+
+resources:
+  - imageimport-1.yaml
+  - imageimport-2.yaml
+
+
+labels:
+  - pairs:
+      core.choreo.dev/deployment-track: reading-list-webapp-main
