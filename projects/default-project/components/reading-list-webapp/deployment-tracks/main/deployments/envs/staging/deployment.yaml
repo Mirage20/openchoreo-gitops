@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: reading-list-webapp-development
 spec:
-  deploymentArtifactRef: reading-list-webapp-v0-1-0
+  deploymentArtifactRef: reading-list-webapp-v0-2-0
   configurationOverrides:
     application:
       resourceLimits:

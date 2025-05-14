@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: reading-list-service-development
 spec:
-  deploymentArtifactRef: reading-list-service-build-plan-4061be9
+  deploymentArtifactRef: reading-list-service-build-plan-7b949ae
   configurationOverrides:
     application:
       resourceLimits:
