@@ -1,7 +1,6 @@
 
 resources:
-  - buildplan-1.yaml
-
+  - deployment-profile-1.yaml
 
 labels:
   - pairs:

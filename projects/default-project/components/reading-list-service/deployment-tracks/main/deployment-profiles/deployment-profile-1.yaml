@@ -1,0 +1,25 @@
+apiVersion: core.choreo.dev/v1
+kind: DeploymentProfile
+metadata:
+  name: reading-list-service-deployment-profile-1
+  annotations:
+    core.choreo.dev/display-name: Deployment Profile for Reading List Service
+    core.choreo.dev/description: Deployment profile for the Reading List Service
+  labels:
+    core.choreo.dev/name: reading-list-service-deployment-profile-1
+spec:
+  configuration:
+    application:
+      env:
+        - key: READING_LIST_SERVICE_URL
+          value: https://dev.choreoapis.internal/default-project/reading-list-service/api/v1/reading-list
+        - key: NODE_TLS_REJECT_UNAUTHORIZED # This is for testing only and is not safe for production use
+          value: "0"
+    endpointTemplates:
+      - metadata:
+          name: webapp
+        spec:
+          service:
+            basePath: /
+            port: 3000
+          type: HTTP
