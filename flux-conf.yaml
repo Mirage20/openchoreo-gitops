@@ -1,0 +1,27 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: openchoreo-gitops
+  namespace: flux-system
+spec:
+  interval: 1m
+  ref:
+    branch: main
+  url: https://github.com/Mirage20/openchoreo-gitops
+
+---
+
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: openchoreo-gitops
+  namespace: flux-system
+spec:
+  interval: 10m
+#  targetNamespace: default-org
+  sourceRef:
+    kind: GitRepository
+    name: openchoreo-gitops
+#  path: "./kustomize"
+  prune: true
+  timeout: 1m
