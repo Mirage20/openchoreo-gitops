@@ -9,17 +9,12 @@ metadata:
     core.choreo.dev/name: reading-list-service-deployment-profile-1
 spec:
   configuration:
-    application:
-      env:
-        - key: READING_LIST_SERVICE_URL
-          value: https://dev.choreoapis.internal/default-project/reading-list-service/api/v1/reading-list
-        - key: NODE_TLS_REJECT_UNAUTHORIZED # This is for testing only and is not safe for production use
-          value: "0"
     endpointTemplates:
       - metadata:
-          name: webapp
+          name: reading_list
         spec:
           service:
-            basePath: /
-            port: 3000
-          type: HTTP
+            basePath: /api/v1/reading-list
+            port: 8080
+          type: REST
+          schemaFilePath: docs/openapi.yaml
