@@ -1,0 +1,4 @@
+
+resources:
+  - component.yaml
+  - deployment-tracks

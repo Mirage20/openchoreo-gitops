@@ -1,0 +1,7 @@
+apiVersion: core.choreo.dev/v1
+kind: Deployment
+metadata:
+  name: github-issue-reporter-deployment
+  annotations:
+    core.choreo.dev/display-name: GitHub Issue Reporter Deployment
+    core.choreo.dev/description: Development deployment for GitHub Issue Reporter

@@ -1,0 +1,19 @@
+
+resources:
+  - ../../base
+
+
+nameSuffix: -staging
+
+labels:
+  - pairs:
+      core.choreo.dev/environment: staging
+      core.choreo.dev/name: github-issue-reporter-staging
+
+patches:
+  - target:
+      group:  core.choreo.dev
+      version: v1
+      kind:   Deployment
+      name:   github-issue-reporter-deployment
+    path: deployment.yaml

@@ -1,0 +1,14 @@
+apiVersion: core.choreo.dev/v1
+kind: Component
+metadata:
+  name: github-issue-reporter
+  annotations:
+    core.choreo.dev/display-name: GitHub Issue Reporter
+    core.choreo.dev/description: Report summary of GitHub issues
+  labels:
+    core.choreo.dev/name: github-issue-reporter
+spec:
+  type: ScheduledTask
+  source:
+    containerRegistry:
+      imageName: ghcr.io/openchoreo/samples/github-issue-reporter

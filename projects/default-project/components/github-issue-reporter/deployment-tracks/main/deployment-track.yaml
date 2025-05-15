@@ -1,0 +1,10 @@
+apiVersion: core.choreo.dev/v1
+kind: DeploymentTrack
+metadata:
+  name: github-issue-reporter-main
+  annotations:
+    core.choreo.dev/display-name: Deployment Track
+    core.choreo.dev/description: Main deployment track
+  labels:
+    core.choreo.dev/name: main
+spec: {}

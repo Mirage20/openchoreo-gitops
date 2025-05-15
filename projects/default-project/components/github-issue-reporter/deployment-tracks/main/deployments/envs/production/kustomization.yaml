@@ -1,0 +1,19 @@
+
+resources:
+  - ../../base
+
+
+nameSuffix: -production
+
+labels:
+  - pairs:
+      core.choreo.dev/environment: production
+      core.choreo.dev/name: github-issue-reporter-production
+
+patches:
+  - target:
+      group:  core.choreo.dev
+      version: v1
+      kind:   Deployment
+      name:   github-issue-reporter-deployment
+    path: deployment.yaml

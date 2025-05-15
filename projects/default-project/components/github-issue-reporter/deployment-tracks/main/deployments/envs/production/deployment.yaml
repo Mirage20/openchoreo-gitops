@@ -1,0 +1,11 @@
+apiVersion: core.choreo.dev/v1
+kind: Deployment
+metadata:
+  name: github-issue-reporter-deployment
+spec:
+  deploymentArtifactRef: github-issue-reporter-v0-1-0
+  configurationOverrides:
+    application:
+      resourceLimits:
+        cpu: 2000m
+        memory: 4Gi

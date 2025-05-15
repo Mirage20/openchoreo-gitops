@@ -1,0 +1,7 @@
+
+resources:
+  - main
+
+labels:
+  - pairs:
+      core.choreo.dev/component: github-issue-reporter

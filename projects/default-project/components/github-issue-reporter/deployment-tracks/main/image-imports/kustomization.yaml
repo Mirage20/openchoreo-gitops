@@ -1,0 +1,8 @@
+
+resources:
+  - imageimport-1.yaml
+
+
+labels:
+  - pairs:
+      core.choreo.dev/deployment-track: main

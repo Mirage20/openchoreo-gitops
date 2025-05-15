@@ -1,0 +1,59 @@
+apiVersion: core.choreo.dev/v1
+kind: DeploymentProfile
+metadata:
+  name: github-issue-reporter-deployment-profile-1
+  annotations:
+    core.choreo.dev/display-name: Deployment Profile for GitHub Issue Reporter
+    core.choreo.dev/description: Deployment profile for the GitHub Issue Reporter
+  labels:
+    core.choreo.dev/name: github-issue-reporter-deployment-profile-1
+spec:
+  configuration:
+    application:
+      # Define mapping of environment variables to configuration group keys
+      env:
+        - key: GITHUB_REPOSITORY
+          valueFrom:
+            configurationGroupRef:
+              name: github
+              key: repository
+        - key: GITHUB_TOKEN
+          valueFrom:
+            configurationGroupRef:
+              name: github
+              key: pat
+        - key: MYSQL_HOST
+          valueFrom:
+            configurationGroupRef:
+              name: mysql
+              key: host
+        - key: MYSQL_PORT
+          valueFrom:
+            configurationGroupRef:
+              name: mysql
+              key: port
+        - key: MYSQL_USER
+          valueFrom:
+            configurationGroupRef:
+              name: mysql
+              key: user
+        - key: MYSQL_PASSWORD
+          valueFrom:
+            configurationGroupRef:
+              name: mysql
+              key: password
+        - key: MYSQL_DATABASE
+          valueFrom:
+            configurationGroupRef:
+              name: mysql
+              key: database
+      # Here, we bulk map the entire email configuration group to the environment variables
+      # The configuration group key will be converted into a compatible environment variable key
+      # Ex: email-host -> EMAIL_HOST
+      envFrom:
+        - configurationGroupRef:
+            name: email
+      task:
+        schedule:
+          # Run the task every minute so we can see the results quickly
+          cron: "*/1 * * * *"
