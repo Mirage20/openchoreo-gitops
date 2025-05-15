@@ -2,9 +2,9 @@ namespace: default-org
 
 resources:
   - hack
-#  - dataplanes
-#  - deployment-pipelines
-#  - environments
+  - dataplanes
+  - deployment-pipelines
+  - environments
   - configuration-groups
   - projects
 
