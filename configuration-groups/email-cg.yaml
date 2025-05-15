@@ -1,0 +1,47 @@
+apiVersion: core.choreo.dev/v1
+kind: ConfigurationGroup
+metadata:
+  name: email
+  annotations:
+    core.choreo.dev/display-name: Email SMTP Configuration
+    core.choreo.dev/description: Email configuration for internal services
+  labels:
+    core.choreo.dev/name: email
+spec:
+  environmentGroups:
+    - environments:
+        - development
+        - staging
+        - production
+      name: all-environments
+    - environments:
+        - development
+        - staging
+      name: non-production
+  configurations:
+    - key: email-host
+      values:
+        - environmentGroupRef: non-production
+          value: "smtp-test.internal"
+        - environment: production
+          value: "smtp.internal"
+    - key: email-port
+      values:
+        - environmentGroupRef: all-environments
+          value: "587"
+    - key: email-sender
+      values:
+        - environmentGroupRef: all-environments
+          value: "no-reply@example.com"
+    - key: email-password
+      values:
+        - environmentGroupRef: non-production
+          vaultKey: "secret/data/dev/email/no-reply/password"
+        - environment: production
+          vaultKey: "secret/data/prod/email/no-reply/password"
+    - key: email-to
+      values:
+        - environmentGroupRef: non-production
+          value: "john@example.com"
+        - environment: production
+          value: "max@example.com,john@example.com"

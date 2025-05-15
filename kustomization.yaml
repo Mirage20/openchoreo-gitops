@@ -5,6 +5,7 @@ resources:
 #  - dataplanes
 #  - deployment-pipelines
 #  - environments
+  - configuration-groups
   - projects
 
 labels:

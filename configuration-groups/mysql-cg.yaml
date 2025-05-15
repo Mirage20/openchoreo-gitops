@@ -1,0 +1,49 @@
+apiVersion: core.choreo.dev/v1
+kind: ConfigurationGroup
+metadata:
+  name: mysql
+  annotations:
+    core.choreo.dev/display-name: MySQL Configuration
+    core.choreo.dev/description: MySQL configuration for the internal database of the organization
+  labels:
+    core.choreo.dev/name: mysql
+spec:
+  environmentGroups:
+    - environments:
+        - development
+        - staging
+        - production
+      name: all-environments
+  configurations:
+    - key: host
+      values:
+        - environment: development
+          value: "dev-mysql.internal"
+        - environment: staging
+          value: "stg-mysql.internal"
+        - environment: production
+          value: "prod-mysql.internal"
+    - key: port
+      values:
+        - environmentGroupRef: all-environments
+          value: "3306"
+    - key: user
+      values:
+        - environment: development
+          value: "dev-sql-user"
+        - environment: staging
+          value: "stg-sql-user"
+        - environment: production
+          value: "prod-sql-user"
+    - key: password
+      values:
+        - environment: development
+          vaultKey: "secret/data/dev/mysql/password"
+        - environment: staging
+          vaultKey: "secret/data/stg/mysql/password"
+        - environment: production
+          vaultKey: "secret/data/prod/mysql/password"
+    - key: database
+      values:
+        - environmentGroupRef: all-environments
+          value: "github-issue-reporter"

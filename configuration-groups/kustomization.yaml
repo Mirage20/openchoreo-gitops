@@ -1,0 +1,5 @@
+
+resources:
+  - email-cg.yaml
+  - github-cg.yaml
+  - mysql-cg.yaml
