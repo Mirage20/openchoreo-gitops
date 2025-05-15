@@ -1,0 +1,10 @@
+# The @openchoreo/devs and @openchoreo/ops are sample teams that are used for the demonstration.
+
+# Anyone may touch development overlays
+**/envs/development/**  @openchoreo/devs   @openchoreo/ops
+
+# Only Ops can change staging or production
+**/envs/staging/**      @openchoreo/ops
+**/envs/production/**   @openchoreo/ops
+
+# Add other nessesary rules ...
