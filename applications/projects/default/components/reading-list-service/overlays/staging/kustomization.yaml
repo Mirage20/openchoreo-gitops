@@ -1,0 +1,8 @@
+resources:
+  - reading-list-service-workload.yaml
+  - reading-list-service-endpoint.yaml
+
+labels:
+  - pairs:
+      choreo.dev/project: default
+      choreo.dev/environment: staging

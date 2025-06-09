@@ -1,0 +1,14 @@
+namespace: default
+
+resources:
+  - deployment-pipelines/default.yaml
+  - workloadclasses/go-standard.yaml
+  - endpointclasses/rest-api-standard.yaml
+  - environments/development.yaml
+  - environments/staging.yaml
+  - environments/production.yaml
+
+
+labels:
+  - pairs:
+      openchoreo.dev/managed-by: platform-team

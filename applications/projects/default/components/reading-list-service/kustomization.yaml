@@ -1,0 +1,5 @@
+resources:
+  - component.yaml
+  - overlays/development
+#  - overlays/staging
+#  - overlays/production

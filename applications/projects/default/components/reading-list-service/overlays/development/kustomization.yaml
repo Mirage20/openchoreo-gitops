@@ -1,0 +1,6 @@
+resources: []
+
+labels:
+  - pairs:
+      choreo.dev/project: default
+      choreo.dev/environment: development

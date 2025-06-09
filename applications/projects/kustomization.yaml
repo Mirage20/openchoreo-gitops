@@ -1,0 +1,6 @@
+resources:
+  - default
+
+labels:
+  - pairs:
+      openchoreo.dev/managed-by: dev-team
