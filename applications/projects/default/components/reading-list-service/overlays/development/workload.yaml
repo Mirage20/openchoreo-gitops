@@ -1,0 +1,33 @@
+apiVersion: core.choreo.dev/v1
+kind: Workload
+metadata:
+  creationTimestamp: null
+  name: reading-list-service
+  namespace: default
+spec:
+  args:
+  - --port
+  - "9090"
+  className: go-service-standard
+  command:
+  - ./go-greeter
+  env:
+  - key: LOG_LEVEL
+    value: info
+  - key: GITHUB_REPOSITORY
+    valueFrom:
+      configurationGroupRef:
+        key: repository
+        name: github
+  - key: GITHUB_TOKEN
+    valueFrom:
+      configurationGroupRef:
+        key: pat
+        name: github
+  environmentName: development
+  image: ghcr.io/openchoreo/samples/greeter-service:latest
+  owner:
+    componentName: reading-list-service
+    projectName: default
+  type: Service
+status: {}
